@@ -23,23 +23,25 @@ public class InMemoryUserRepository : IUserRepository
         DateTime now = DateTime.UtcNow;
 
         User user1 = new User("Matti", "Meikäläinen", "matti.meikalainen@example.com");
-        user1.Id = Guid.Parse("11111111-1111-1111-1111-111111111111");
+        typeof(BaseEntity).GetProperty("Id")!.SetValue(user1,
+            Guid.Parse("11111111-1111-1111-1111-111111111111"));
         user1.CreatedAt = now.AddDays(-30);
         user1.UpdatedAt = now.AddDays(-30);
 
         User user2 = new User("Maija", "Virtanen", "maija.virtanen@example.com");
-        user2.Id = Guid.Parse("22222222-2222-2222-2222-222222222222");
+        typeof(BaseEntity).GetProperty("Id")!.SetValue(user2,
+            Guid.Parse("22222222-2222-2222-2222-222222222222"));
         user2.CreatedAt = now.AddDays(-15);
         user2.UpdatedAt = now.AddDays(-5);
 
         User user3 = new User("Teppo", "Testaaja", "teppo.testaaja@example.com");
-        user3.Id = Guid.Parse("33333333-3333-3333-3333-333333333333");
+        typeof(BaseEntity).GetProperty("Id")!.SetValue(user3,
+            Guid.Parse("33333333-3333-3333-3333-333333333333"));
         user3.CreatedAt = now.AddDays(-7);
         user3.UpdatedAt = now.AddDays(-1);
 
         _users.AddRange(new[] { user1, user2, user3 });
     }
-
 
     public Task<User?> GetByIdAsync(Guid id)
     {

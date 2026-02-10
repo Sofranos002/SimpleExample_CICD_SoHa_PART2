@@ -130,14 +130,14 @@ public class UserServiceTests
         Guid id = Guid.NewGuid();
         User user = new User("Old", "Name", "old@example.com");
 
-        // Aseta Id heijastuksella
         typeof(BaseEntity)
             .GetProperty("Id")!
             .SetValue(user, id);
 
         _mockRepository.Setup(r => r.GetByIdAsync(id)).ReturnsAsync(user);
+        _mockRepository.Setup(r => r.UpdateAsync(It.IsAny<User>())).ReturnsAsync(user);
 
-        UpdateUserDto dto = new UpdateUserDto
+        var dto = new UpdateUserDto
         {
             FirstName = "New",
             LastName = "Name",
@@ -150,7 +150,6 @@ public class UserServiceTests
         result!.FirstName.Should().Be("New");
         result.Email.Should().Be("new@example.com");
     }
-
 
     // 5. UpdateAsync - käyttäjää ei löydy
     [Fact]
@@ -179,12 +178,11 @@ public class UserServiceTests
         Guid id = Guid.NewGuid();
         User user = new User("Anna", "Berg", "a@b.com");
 
-        // Aseta Id heijastuksella
         typeof(BaseEntity)
             .GetProperty("Id")!
             .SetValue(user, id);
 
-        _mockRepository.Setup(r => r.GetByIdAsync(id)).ReturnsAsync(user);
+        _mockRepository.Setup(r => r.ExistsAsync(id)).ReturnsAsync(true);
         _mockRepository.Setup(r => r.DeleteAsync(id)).Returns(Task.CompletedTask);
 
         bool result = await _service.DeleteAsync(id);
