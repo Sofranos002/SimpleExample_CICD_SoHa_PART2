@@ -1,6 +1,7 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35825.156 d17.13
+VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleExample.API", "SimpleExample.API\SimpleExample.API.csproj", "{3514A486-B42A-F7EF-A1DF-1C9883FF9317}"
 EndProject
@@ -11,6 +12,15 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleExample.Infrastructure", "SimpleExample.Infrastructure\SimpleExample.Infrastructure.csproj", "{DF9430F1-0A7E-1CB0-5607-9E9731F4D78D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleExample.Tests", "SimpleExample.Tests\SimpleExample.Tests.csproj", "{D2A6B4F3-2015-4D62-B92C-F451382CDC6B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pictures", "Pictures", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Users\sohvi\OneDrive\Työpöytä\kuvat\25_All_Tests.png = ..\..\..\Users\sohvi\OneDrive\Työpöytä\kuvat\25_All_Tests.png
+		..\..\..\Users\sohvi\OneDrive\Työpöytä\kuvat\26_Test_Explorer_Full..png = ..\..\..\Users\sohvi\OneDrive\Työpöytä\kuvat\26_Test_Explorer_Full..png
+		..\..\..\Users\sohvi\OneDrive\Työpöytä\kuvat\27_Green_Pipeline.png = ..\..\..\Users\sohvi\OneDrive\Työpöytä\kuvat\27_Green_Pipeline.png
+		..\..\..\Users\sohvi\OneDrive\Työpöytä\kuvat\28_API_Validation_Error.png = ..\..\..\Users\sohvi\OneDrive\Työpöytä\kuvat\28_API_Validation_Error.png
+		..\..\..\Users\sohvi\OneDrive\Työpöytä\kuvat\29_Duplicate_Error.png = ..\..\..\Users\sohvi\OneDrive\Työpöytä\kuvat\29_Duplicate_Error.png
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
